@@ -65,7 +65,9 @@ const Sidebarview = ({
             </div>
 
             {notes?.length === 0 ? (
-                "no notes are available"
+                <p className="text-center font-bold dark:bg-zinc-900 bg-zinc-300 rounded-sm p-1">
+                    Nothing to show here :(
+                </p>
             ) : (
                 <ul className="max-h-[40%] overflow-auto pr-4">
                     {notes?.map((note: any, index: Key | null | undefined) => {

@@ -4,6 +4,8 @@ import Sidebar from "../../components/Sidebar.tsx";
 import Editor from "../../components/Editor";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { redirect } from "next/navigation";
+import { useTheme } from "next-themes";
 interface User {
     name: string;
     email: string;
@@ -26,12 +28,15 @@ const Page = () => {
     const [notes, setNotes] = useState<Note[]>([]);
     const sessionData = useSession();
     const session: Session | null = sessionData.data as Session | null;
+    if (!session) {
+        redirect("/");
+    }
     const [currentNote, setCurrentNote] = useState<Note | null>(null);
     const [noteToChange, setNoteToChange] = useState<Note | null>(null);
     const [contentToChange, setContentToChange] = useState<string>("");
     const [key, setKey] = useState<number>(0);
     const [inputValue, setInputValue] = useState(currentNote?.title);
-
+    const { theme } = useTheme();
     const replaceNote = (newNote: any) => {
         setNotes((prevNotes): any => {
             const index: number = prevNotes.findIndex(
@@ -182,11 +187,12 @@ const Page = () => {
                 setCurrentNote={setCurrentNote}
                 setNoteToChange={setNoteToChange}
             />
-            {/* <h1>Here you can see a single post</h1> */}
             {currentNote ? (
                 <div className="p-8 w-full dark:bg-zinc-950">
                     <div className="flex gap-3 items-center mb-6">
-                        <p className="text-4xl">{currentNote.icon}</p>
+                        <p className="text-4xl dark:bg-zinc-900 bg-zinc-300 p-4 rounded-xl">
+                            {currentNote.icon}
+                        </p>
                         <input
                             type="text"
                             className="dark:text-white text-black text-5xl font-bold outline-none bg-transparent"
@@ -195,7 +201,7 @@ const Page = () => {
                         />
                     </div>
                     <Editor
-                        theme="dark"
+                        theme={theme}
                         currentNote={currentNote}
                         key={key}
                         updateContent={updateContent}
@@ -203,7 +209,11 @@ const Page = () => {
                     />
                 </div>
             ) : (
-                "Select a Note to get started"
+                <div className="flex items-center justify-center w-full dark:bg-zinc-950">
+                    <h1 className="text-4xl font-bold text-center">
+                        Select A Note To Start Editing It.
+                    </h1>
+                </div>
             )}
         </main>
     );

@@ -27,68 +27,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
     const { userId } = await req.json();
 
     console.log(userId);
-    
+
     const newNote = new NoteModel({
         icon: getRandomEmoji(),
-        content: JSON.stringify([
-            {
-                id: "4f7f7e79-e5ad-494c-9c6c-47e1071dc6d4",
-                type: "heading",
-                props: {
-                    textColor: "default",
-                    backgroundColor: "default",
-                    textAlignment: "left",
-                    level: 3,
-                },
-                content: [
-                    {
-                        type: "text",
-                        text: "Let's see if this works or not, this is a new note",
-                        styles: {},
-                    },
-                ],
-                children: [],
-            },
-            {
-                id: "00109f9b-ecd5-43c0-825d-a4b53e6d48ba",
-                type: "paragraph",
-                props: {
-                    textColor: "default",
-                    backgroundColor: "default",
-                    textAlignment: "left",
-                },
-                content: [],
-                children: [],
-            },
-            {
-                id: "8b758ba0-d935-44a7-84e6-e61cffb95b2c",
-                type: "paragraph",
-                props: {
-                    textColor: "default",
-                    backgroundColor: "green",
-                    textAlignment: "left",
-                },
-                content: [
-                    {
-                        type: "text",
-                        text: "i don't know what to type here",
-                        styles: {},
-                    },
-                ],
-                children: [],
-            },
-            {
-                id: "43a4965e-65eb-4f81-b48d-38c48c586a4d",
-                type: "paragraph",
-                props: {
-                    textColor: "default",
-                    backgroundColor: "default",
-                    textAlignment: "left",
-                },
-                content: [],
-                children: [],
-            },
-        ]),
+        content: JSON.stringify(""),
         author: userId,
         title: "untitled",
     });
