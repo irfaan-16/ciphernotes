@@ -1,7 +1,7 @@
 "use client";
 
-import Editor from "@/components/editor";
-import Sidebar from "@/components/sidebar";
+import Editor from "@/components/Editor";
+import Sidebar from "@/components/Sidebar";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 interface User {
@@ -22,7 +22,7 @@ interface Note {
     author: string;
     title: string;
 }
-const page = ({ params }: any) => {
+const Page = ({ params }: any) => {
     const [notes, setNotes] = useState<Note[]>([]);
     const sessionData = useSession();
     const session: Session | null = sessionData.data as Session | null;
@@ -133,7 +133,6 @@ const page = ({ params }: any) => {
         setKey((prevKey) => prevKey + 1);
         setInputValue((prev) => currentNote?.title);
         // setNoteToChangeId((prev): any => currentNote?._id);
-
     }, [currentNote]);
 
     const updateContent = async (value: any) => {
@@ -173,7 +172,7 @@ const page = ({ params }: any) => {
         replaceNoteContent(contentToChange);
         console.log(noteToChange?.content);
     }, [noteToChange]);
-    
+
     const noteId = params.email;
     return (
         <main className="flex max-h-screen">
@@ -210,4 +209,4 @@ const page = ({ params }: any) => {
         </main>
     );
 };
-export default page;
+export default Page;

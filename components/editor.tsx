@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 // import Editorview from "./editorview";
 import dynamic from "next/dynamic";
 import React from "react";
-const Editorview = dynamic(() => import("./editorview"), { ssr: false });
+// const Editorview = dynamic(() => import("./Editorview"), { ssr: false });
 
 // Our <Editor> component we can reuse later
 const Editor = ({

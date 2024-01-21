@@ -11,7 +11,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-const sidebarview = ({
+const Sidebarview = ({
     user,
     theme,
     handleCreateNote,
@@ -31,7 +31,7 @@ const sidebarview = ({
                     alt="User Profile Picture"
                     className="rounded-md"
                 />
-                <span className="font-bold">{user?.name}'s notebook</span>
+                <span className="font-bold">{user?.name}&apos;s notebook</span>
             </div>
 
             <ul>
@@ -111,4 +111,4 @@ const sidebarview = ({
     );
 };
 
-export default sidebarview;
+export default Sidebarview;

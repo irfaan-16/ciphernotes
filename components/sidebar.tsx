@@ -6,8 +6,8 @@ import { Search, PlusCircle, IceCream, NotepadText } from "lucide-react";
 import { ModeToggle } from "./toggle-theme";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import SideBarView from "./sidebarview";
-
+// import SideBarView from "./Sidebarview";
+// import Sidebarview from "./Sidebarview";
 import {
     Tooltip,
     TooltipContent,
@@ -17,6 +17,7 @@ import {
 
 import "@blocknote/core/style.css";
 import { useState, useEffect } from "react";
+import Sidebarview from "./Sidebarview";
 
 // export const getServerSideProps = async (context: any) => {
 //     const dynamicPage = context.params.dynamicPage;
@@ -28,7 +29,7 @@ import { useState, useEffect } from "react";
 //     return { props: { notes, dynamicPage } };
 // };
 
-const sidebar = ({
+const Sidebar = ({
     notes,
     user,
     setNotes,
@@ -38,7 +39,7 @@ const sidebar = ({
     const { data: session } = useSession();
     const { theme } = useTheme();
     // const [notes, setNotes] = useState<any[]>([]);
-    console.log("sidebar re rendered");
+    console.log("Sidebar re rendered");
     // console.log(notes);
 
     // const user = session?.user;
@@ -90,7 +91,7 @@ const sidebar = ({
     };
 
     return (
-        <SideBarView
+        <Sidebarview
             user={user}
             theme={theme}
             handleCreateNote={handleCreateNote}
@@ -102,4 +103,4 @@ const sidebar = ({
         />
     );
 };
-export default sidebar;
+export default Sidebar;
