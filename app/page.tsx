@@ -1,5 +1,5 @@
 "use client";
-import Header from "@/components/Header";
+import Header from "../components/Header";
 import { useSession, signIn } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { useTheme } from "next-themes";
