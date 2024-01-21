@@ -12,6 +12,9 @@ const nextConfig = {
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
     },
+    compilerOptions: {
+        allowImportingTsExtensions: true,
+    },
 };
 
 module.exports = nextConfig;

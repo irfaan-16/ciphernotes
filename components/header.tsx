@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Header = () => {
+const header = () => {
     return (
         <nav className="py-4 px-8  border-b-2">
             <Link href="/" className="flex gap-3 items-center w-max">
@@ -12,4 +12,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default header;

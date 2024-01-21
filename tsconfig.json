@@ -3,6 +3,7 @@
         "target": "es5",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
+        "allowImportingTsExtensions": true,
         "skipLibCheck": true,
         "strict": true,
         "noEmit": true,
@@ -21,6 +22,9 @@
         "paths": {
             "@/*": ["./*"]
         }
+    },
+    "reolve": {
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
     },
     "include": [
         "next-env.d.ts",
