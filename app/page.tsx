@@ -2,17 +2,13 @@
 import Header from "../components/Header";
 import { useSession, signIn } from "next-auth/react";
 import { redirect } from "next/navigation";
-import { useTheme } from "next-themes";
 
 export default function Home() {
     const { data: session } = useSession();
-    const { theme } = useTheme();
 
     if (session && session.user) {
-        redirect("/editor/34");
+        redirect("/editor");
     }
-
-    console.log("Theme:", theme);
 
     return (
         <main>

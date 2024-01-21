@@ -22,7 +22,7 @@ interface Note {
     author: string;
     title: string;
 }
-const page = ({ params }: any) => {
+const page = () => {
     const [notes, setNotes] = useState<Note[]>([]);
     const sessionData = useSession();
     const session: Session | null = sessionData.data as Session | null;
@@ -173,7 +173,6 @@ const page = ({ params }: any) => {
         console.log(noteToChange?.content);
     }, [noteToChange]);
 
-    const noteId = params.email;
     return (
         <main className="flex max-h-screen">
             <Sidebar
