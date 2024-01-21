@@ -9,7 +9,7 @@ import React from "react";
 // const Editorview = dynamic(() => import("./Editorview"), { ssr: false });
 
 // Our <Editor> component we can reuse later
-const Editor = ({
+const editor = ({
     theme,
     currentNote,
     updateContent,
@@ -34,4 +34,4 @@ const Editor = ({
     );
 };
 
-export default Editor;
+export default editor;
