@@ -22,7 +22,7 @@ interface Note {
     author: string;
     title: string;
 }
-const Page = ({ params }: any) => {
+const page = ({ params }: any) => {
     const [notes, setNotes] = useState<Note[]>([]);
     const sessionData = useSession();
     const session: Session | null = sessionData.data as Session | null;
@@ -209,4 +209,4 @@ const Page = ({ params }: any) => {
         </main>
     );
 };
-export default Page;
+export default page;

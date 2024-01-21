@@ -17,7 +17,7 @@ import {
 
 import "@blocknote/core/style.css";
 import { useState, useEffect } from "react";
-import Sidebarview from "./Sidebarview";
+import Sidebarview from "@/components/Sidebarview";
 
 // export const getServerSideProps = async (context: any) => {
 //     const dynamicPage = context.params.dynamicPage;
