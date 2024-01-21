@@ -36,41 +36,13 @@ const Sidebar = ({
     setCurrentNote,
     setNoteToChange,
 }: any) => {
-    const { data: session } = useSession();
     const { theme } = useTheme();
-    // const [notes, setNotes] = useState<any[]>([]);
     console.log("Sidebar re rendered");
-    // console.log(notes);
 
-    // const user = session?.user;
-    // const response = await fetch(`../api/getnotes?email=${user?.email}`);
-    // const { notes } = await response.json();
-
-    // useEffect(() => {
-    //     const getNotes = async () => {
-    //         const response = await fetch(
-    //             `../api/getnotes?email=${session?.user?.email}`
-    //         );
-    //         const { notes } = await response.json();
-    //         console.log("user notes:", notes);
-
-    //         setNotes((prevNotes) => notes);
-    //     };
-    //     getNotes();
-    // }, [session]);
-
-    // const changeCurrentNote = (content: string) => {
-    //     setCurrentNote(content);
-    //     console.log(content);
-    // };
     console.log(user);
 
     const handleCreateNote = async () => {
         try {
-            // const idResponse = await fetch(
-            //     `api/getId?email=${session?.user?.email}`
-            // );
-            // const { mongoDbId } = await idResponse.json();
             const data = { userId: user?.mongoDbId };
             const response = await fetch("../api/createnote", {
                 method: "POST",
@@ -103,4 +75,5 @@ const Sidebar = ({
         />
     );
 };
+
 export default Sidebar;

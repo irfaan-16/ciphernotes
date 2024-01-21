@@ -1,13 +1,8 @@
 "use client";
 import Header from "@/components/Header";
 import { useSession, signIn } from "next-auth/react";
-import dynamic from "next/dynamic";
 import { redirect } from "next/navigation";
-import Sidebar from "@/components/Sidebar";
-const Editor = dynamic(() => import("@/components/Editor"), { ssr: false });
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
 
 export default function Home() {
     const { data: session } = useSession();

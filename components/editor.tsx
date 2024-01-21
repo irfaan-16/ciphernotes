@@ -15,8 +15,6 @@ const Editor = ({
     updateContent,
     setContentToChange,
 }: any) => {
-    const editorRef = useRef<HTMLDivElement>(null);
-
     const editor: BlockNoteEditor | null = useBlockNote({
         editable: true,
         initialContent: JSON.parse(currentNote.content),
@@ -29,15 +27,8 @@ const Editor = ({
         },
     });
 
-    useEffect(() => {
-        // Focus the editor when the component mounts
-        if (editorRef.current) {
-            editorRef.current.focus();
-        }
-    }, [currentNote]);
-
     return (
-        <div className="w-full dark:bg-zinc-950" ref={editorRef}>
+        <div className="w-full dark:bg-zinc-950">
             <BlockNoteView editor={editor} theme={theme} />
         </div>
     );
