@@ -9,6 +9,9 @@ const nextConfig = {
             },
         ],
     },
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx"],
+    },
 };
 
 module.exports = nextConfig;
