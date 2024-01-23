@@ -1,7 +1,7 @@
 "use client";
 
 import Sidebar from "../../components/Sidebar.tsx";
-import Editor from "../../components/Editor";
+import Editor from "../../components/Editor.tsx";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";

@@ -7,7 +7,7 @@ export default function Home() {
     const { data: session } = useSession();
 
     if (session && session.user) {
-        redirect("/editor");
+        redirect("/notebook");
     }
 
     return (

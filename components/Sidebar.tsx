@@ -55,6 +55,7 @@ const Sidebar = ({
 
             if (response.ok) {
                 const note = await response.json();
+                setCurrentNote(note);
                 setNotes((prevNotes: any) => [...prevNotes, note]);
             }
         } catch (error) {
